@@ -1,0 +1,34 @@
+{
+  "name": "sample_tdd",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "jest"
+  },
+  "dependencies": {
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-native": "0.59.8"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/runtime": "^7.4.5",
+    "babel-jest": "^24.8.0",
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.13.1",
+    "jest": "^24.8.0",
+    "jsdom": "^15.1.0",
+    "metro-react-native-babel-preset": "^0.54.1",
+    "react-native-mock": "^0.3.1",
+    "react-native-mock-render": "^0.1.3",
+    "react-test-renderer": "^16.8.6"
+  },
+  "jest": {
+    "preset": "react-native",
+    "testEnvironment": "jsdom",
+    "setupFiles": [
+      "./setupTests.js"
+    ]
+  }
+}
