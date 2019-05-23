@@ -36,19 +36,27 @@ export default class App extends Component {
     return (
       <View style={styles.container}>
         <Text testID={"rectangleLengthText"} style={styles.label}>
-          Length
+          Length :
         </Text>
         <TextInput
+          style={styles.label}
           testID={"rectangleLengthInput"}
           onChangeText={this.onUpadateLength}
+          placeholder="Enter a Number"
+          placeholderTextColor="#808080"
+          returnKeyType="done"
         />
 
         <Text testID={"rectangleWidthText"} style={styles.label}>
-          Width
+          Width :
         </Text>
         <TextInput
           testID={"rectangleWidthInput"}
           onChangeText={this.onUpdateWidth}
+          style={styles.label}
+          placeholder="Enter a Number"
+          placeholderTextColor="#808080"
+          returnKeyType="done"
         />
 
         <TouchableOpacity
@@ -59,7 +67,11 @@ export default class App extends Component {
           <Text style={styles.textButton}>Calculate</Text>
         </TouchableOpacity>
 
-        <Text testID={"rectangleAreaResult"}>{area}</Text>
+        {area ? (
+          <Text testID={"rectangleAreaResult"} style={styles.output}>
+            {area}{" "}
+          </Text>
+        ) : null}
       </View>
     );
   }
@@ -67,8 +79,9 @@ export default class App extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    margin: 15
+    padding: 20,
+    marginHorizontal: 15,
+    marginTop: 100
   },
   button: {
     backgroundColor: "#414f6f",
@@ -82,6 +95,17 @@ const styles = StyleSheet.create({
     color: "#ffffff"
   },
   label: {
-    fontSize: 17
+    height: 40,
+    backgroundColor: "rgba(225,225,225,0.2)",
+    marginBottom: 10,
+    padding: 10
+  },
+  output: {
+    padding: 15,
+    color: "#000000",
+    backgroundColor: "#ADD8E6",
+    borderRadius: 10,
+    marginTop: 20,
+    textAlign: "center"
   }
 });
